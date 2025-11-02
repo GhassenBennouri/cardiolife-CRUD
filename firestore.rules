@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Règles pour les utilisateurs
+    match /users/{userId} {
+      allow read, write: if true; // Temporaire pour l'initialisation
+    }
+    
+    // Règles pour les clients
+    match /clients/{clientId} {
+      allow read, write: if true;
+    }
+    
+    // Règles pour les appareils
+    match /appareils/{appareilId} {
+      allow read, write: if true;
+    }
+    
+    // Règles pour les maintenances
+    match /maintenances/{maintenanceId} {
+      allow read, write: if true;
+    }
+    
+    // Règles pour les consommables
+    match /consommables/{consommableId} {
+      allow read, write: if true;
+    }
+    
+    // Règles pour les consommables clients
+    match /consommables_clients/{consommableClientId} {
+      allow read, write: if true;
+    }
+    
+    // Règles pour les mouvements de stock
+    match /mouvements_stock/{mouvementId} {
+      allow read, write: if true;
+    }
+    
+    // Règles pour les alertes de stock
+    match /stock_alerts/{alerteId} {
+      allow read, write: if true;
+    }
+  }
+}

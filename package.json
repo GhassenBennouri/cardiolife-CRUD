@@ -1,0 +1,62 @@
+{
+  "name": "aed-management",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --configuration production",
+    "build:dev": "ng build --configuration development",
+    "build:prod": "ng build --configuration production",
+    "build:analyze": "ng build --configuration production --stats-json && npx webpack-bundle-analyzer dist/aed-management/stats.json",
+    "build:optimized": "node build-prod.js",
+    "watch": "ng build --watch --configuration development",
+    "serve:prod": "ng serve --configuration production",
+    "clean:install": "node clean-install.js",
+    "deploy:firebase": "npm run build:prod && firebase deploy",
+    "deploy:full": "node deploy-with-data.js",
+    "deploy:static": "node deploy-static.js",
+    "init:data": "node init-production-data.js",
+    "init:firestore": "node init-firestore-database.js",
+    "test:firebase": "node test-firebase-config.js"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^20.3.9",
+    "@angular/common": "^20.3.9",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/fire": "^20.0.1",
+    "@angular/forms": "^20.3.9",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "@fullcalendar/angular": "^6.1.19",
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "firebase": "^11.10.0",
+    "firebase-tools": "^14.23.0",
+    "fullcalendar": "^6.1.19",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "typesaurus": "^10.7.0",
+    "zod": "^3.25.76",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.3.7",
+    "@angular/cli": "^20.3.7",
+    "@angular/compiler-cli": "^20.3.0",
+    "typescript": "~5.9.2"
+  }
+}
